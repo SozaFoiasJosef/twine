@@ -11,7 +11,7 @@
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Litter.</tw-noscript></noscript></tw-story>
 <tw-storydata name="Litter" startnode="1" creator="Twine" creator-version="2.3.16" ifid="5B653E5A-9D22-43DB-BD45-EEE03C236F33" zoom="1" format="Harlowe" format-version="3.2.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">body, tw-story {
 	background-color: #FFEBCD;
-	color: #CDE1FF;
+	color: #000000;
 	font-family: 'Garamond', serif;
 	font-weight: bold;
 	font-size: 1.1em;
@@ -35,8 +35,10 @@ img {
   text-align: center;
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript">var audio= document.createElement('audio');
 audio.src='https://sozafoiasjosef.github.io/twine/images/MrJellyRollsFromPurplePlanet.mp3';
-audio.loop = true;audio.play();</script><tw-passagedata pid="1" name="Passage1" tags="" position="402,401" size="100,100">[insert munro exit image]
-
+audio.loop = true;audio.play();</script><tw-passagedata pid="1" name="Passage1" tags="" position="402,401" size="100,100">&lt;div class=&quot;img&quot;&gt;
+		    &lt;img src=&quot;https://sozafoiasjosef.github.io/twine/images/munro.jpg&quot;&gt;
+	&lt;/div&gt;
+&lt;div class=&quot;center&quot;&gt;
 =|=
 
 Left
@@ -46,23 +48,27 @@ Back
 =|=
 
 Right
-|==|</tw-passagedata><tw-passagedata pid="2" name="Passage2" tags="" position="601,499" size="100,100">&lt;div class=&quot;img&quot;&gt;
+|==|
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="2" name="Passage2" tags="" position="601,499" size="100,100">&lt;div class=&quot;img&quot;&gt;
 		    &lt;img src=&quot;https://sozafoiasjosef.github.io/twine/images/pre-bridge.jpg&quot;&gt;
 	&lt;/div&gt;
 &lt;div class=&quot;center&quot;&gt;
 =|=
 
+
 [[Left-&gt;Passage5]]
 =|=
-(if:$event is 1)[[[Forward-&gt;Passage3]]]
-(if:$event is not 1)[[[Forward-&gt;PostBridgeLitterPassage]]]
+(if:$random is 1)[[[Forward-&gt;Passage3]]]
+(if:$random is not 1 and $mask is false)[[[Forward-&gt;PostBridgeLitterPassage]]]
+(if:$mask is true)[[[Forward-&gt;PostBridgeLitterPassage1]]]
 [[Back-&gt;Passage1]]
 =|=
+
 
 Right
 |==|
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="3" name="Passage3" tags="" position="798,499" size="100,100">&lt;div class=&quot;img&quot;&gt;
-		    &lt;img src=&quot;https://sozafoiasjosef.github.io/twine/images/post-bridgeLitter.jpg&quot;&gt;
+		    &lt;img src=&quot;https://sozafoiasjosef.github.io/twine/images/post-bridge.jpg&quot;&gt;
 	&lt;/div&gt;
 &lt;div class=&quot;center&quot;&gt;
 =|=
@@ -70,7 +76,9 @@ Right
 Left
 =|=
 [[Forward-&gt;Passage4]]
-[[Back-&gt;Passage2]]
+(if:$random is 1)[[[Back-&gt;Passage2]]]
+(if:$random is not 1 and $mask is false)[[[Back-&gt;PostBridgeLitterPassage]]]
+(if:$mask is true)[[[Back-&gt;PostBridgeLitterPassage1]]]
 =|=
 
 Right
@@ -90,54 +98,56 @@ Left
 
 [[Right-&gt;Passage4.2]]
 |==|
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="5" name="Passage5" tags="" position="656,298" size="100,100">
-
-[insert left downhill image]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="5" name="Passage5" tags="" position="664,300" size="100,100">&lt;div class=&quot;img&quot;&gt;
+		    &lt;img src=&quot;https://sozafoiasjosef.github.io/twine/images/sidepathdownhill.jpg&quot;&gt;
+	&lt;/div&gt;
 
 &lt;div class=&quot;center&quot;&gt;
 =|=
 
 Left
 =|=
-[[Forward-&gt;Passage6]]
+(if:$glove is false)[[Forward-&gt;Passage6]]
+(if:$glove is true)[[Forward-&gt;Passage7]]
 [[Back-&gt;Passage2]]
 =|=
 
 Right
 |==|
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="6" name="Passage6" tags="" position="801,197" size="100,100">
-
-[insert sidewalk image]
-
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="6" name="Passage6" tags="" position="942,208" size="100,100">
+&lt;div class=&quot;img&quot;&gt;
+		    &lt;img src=&quot;https://sozafoiasjosef.github.io/twine/images/sidewalkTrash.jpg&quot;&gt;
+	&lt;/div&gt;
 &lt;div class=&quot;center&quot;&gt;
+[[Pick Up Glove-&gt;Passage7]]
 =|=
 
 Left
 =|=
-[[Forward-&gt;Passage7]]
+[[Forward-&gt;Passage8]]
 [[Back-&gt;Passage5]]
 =|=
 
 Right
 |==|
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="7" name="Passage7" tags="" position="997,197" size="100,100">
-
-[insert sidewalk image]
-
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="7" name="Passage7" tags="" position="938,96" size="100,100">&lt;div class=&quot;img&quot;&gt;
+		    &lt;img src=&quot;https://sozafoiasjosef.github.io/twine/images/sidewalk.jpg&quot;&gt;
+	&lt;/div&gt;
 &lt;div class=&quot;center&quot;&gt;
 =|=
 
 Left
 =|=
 [[Forward-&gt;Passage8]]
-[[Back-&gt;Passage6]]
+[[Back-&gt;Passage5]]
 =|=
 
 Right
 |==|
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="8" name="Passage8" tags="" position="1202,199" size="100,100">
-
-[insert crosswalk image]
+&lt;/div&gt;
+(set: $glove to true)</tw-passagedata><tw-passagedata pid="8" name="Passage8" tags="" position="1199,196" size="100,100">&lt;div class=&quot;img&quot;&gt;
+		    &lt;img src=&quot;https://sozafoiasjosef.github.io/twine/images/crosswalk.jpg&quot;&gt;
+	&lt;/div&gt;
 
 &lt;div class=&quot;center&quot;&gt;
 =|=
@@ -145,14 +155,15 @@ Right
 Left
 =|=
 [[Forward-&gt;Passage9]]
-[[Back-&gt;Passage7]]
+(if:$glove is false)[[Back-&gt;Passage6]]
+(if:$glove is true)[[Back-&gt;Passage7]]
 =|=
 
 Right
 |==|
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="9" name="Passage9" tags="" position="1400,201" size="100,100">
-
-[insert post crosswalk choice image]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="9" name="Passage9" tags="" position="1400,201" size="100,100">&lt;div class=&quot;img&quot;&gt;
+		    &lt;img src=&quot;https://sozafoiasjosef.github.io/twine/images/post-crosswalk.jpg&quot;&gt;
+	&lt;/div&gt;
 
 &lt;div class=&quot;center&quot;&gt;
 =|=
@@ -162,8 +173,8 @@ Right
 Forward
 [[Back-&gt;Passage8]]
 =|=
-
-[[Right-&gt;Passage13]]
+(if:$bag is false)[[Right-&gt;Passage13.1]]
+(if:$bag is true)[[Right-&gt;Passage13]]
 |==|
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="Passage4.1" tags="" position="1196,501" size="100,100">
 
@@ -202,7 +213,7 @@ Right
 &lt;div class=&quot;center&quot;&gt;
 =|=
 
-[[Back-&gt;Passage4.1]]
+[[Left-&gt;Passage4.1]]
 =|=
 Forward
 [[Back-&gt;Passage4.2]]
@@ -240,14 +251,14 @@ Left
 
 Right
 |==|
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="PassageLib" tags="" position="1833,430" size="100,100">
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="PassageLib" tags="" position="1834,430" size="100,100">
 
 [insert lib image]
 
 &lt;div class=&quot;center&quot;&gt;
 =|=
-
-[[Left-&gt;Passage13]]
+(if:$bag is false)[[Left-&gt;Passage13.1]]
+(if:$bag is true)[[Left-&gt;Passage13]]
 =|=
 Forward
 [[Back-&gt;Passage10]]
@@ -257,12 +268,11 @@ Right
 |==|
 &lt;/div&gt;
 &lt;div class=&quot;center&quot;&gt;
-(if:$trash is 0)[[[Next-&gt;BadEndPassage]]]
-(if:$thrown is true)[[[Next-&gt;GoodEndPassage]]]
-&lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="16" name="Passage12" tags="" position="1601,99" size="100,100">
-
-[insert left meliora image]
+(if:$mask is false and $bag is false and $glove is false)[[[Finish-&gt;BadEndPassage]]]
+(if:$mask is true or $bag is true or $glove is true)[[[Finish-&gt;GoodEndPassage]]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="Passage12" tags="" position="1601,99" size="100,100">&lt;div class=&quot;img&quot;&gt;
+		    &lt;img src=&quot;https://sozafoiasjosef.github.io/twine/images/meliora.jpg&quot;&gt;
+	&lt;/div&gt;
 
 &lt;div class=&quot;center&quot;&gt;
 =|=
@@ -275,9 +285,9 @@ Left
 
 Right
 |==|
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="Passage13" tags="" position="1600,299" size="100,100">
-
-[insert bus stop lib image]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="Passage13" tags="" position="1590,248" size="100,100">&lt;div class=&quot;img&quot;&gt;
+		    &lt;img src=&quot;https://sozafoiasjosef.github.io/twine/images/pre-bus-stop.jpg&quot;&gt;
+	&lt;/div&gt;
 
 &lt;div class=&quot;center&quot;&gt;
 =|=
@@ -290,9 +300,10 @@ Left
 
 Right
 |==|
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="Passage14" tags="" position="1799,100" size="100,100">
-
-[insert meliora image]
+&lt;/div&gt;
+(set: $bag to true)</tw-passagedata><tw-passagedata pid="18" name="Passage14" tags="" position="1799,100" size="100,100">&lt;div class=&quot;img&quot;&gt;
+		    &lt;img src=&quot;https://sozafoiasjosef.github.io/twine/images/meliora.jpg&quot;&gt;
+	&lt;/div&gt;
 
 &lt;div class=&quot;center&quot;&gt;
 =|=
@@ -307,20 +318,43 @@ Right
 |==|
 &lt;/div&gt;
 &lt;div class=&quot;center&quot;&gt;
-(if:$trash is 0)[[[Next-&gt;BadEndPassage]]]
-(if:$thrown is true)[[[Next-&gt;GoodEndPassage]]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="GoodEndPassage" tags="" position="2049,299" size="100,100">You threw some trash!
+(if:$mask is false and $bag is false and $glove is false)[[[Finish-&gt;BadEndPassage]]]
+(if:$mask is true or $bag is true or $glove is true)[[[Finish-&gt;GoodEndPassage]]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="GoodEndPassage" tags="" position="2049,298" size="100,100">You threw away some trash!
 
 But was it all the trash?
+(if:$bag is true)[(set:$trash to it + 1)]
+(if:$glove is true)[(set:$trash to it + 1)]
+(if:$mask is true)[(set:$trash to it + 1)]
 
-[[Restart-&gt;Passage1]] </tw-passagedata><tw-passagedata pid="20" name="BadEndPassage" tags="" position="2001,601" size="100,100">Well you didn&#39;t throw any trash away...
+Trash thrown away: (print: $trash)
+
+
+(click:&quot;Restart&quot;)[(restart:)]Restart</tw-passagedata><tw-passagedata pid="20" name="BadEndPassage" tags="" position="2001,601" size="100,100">Well you didn&#39;t throw any trash away...
 maybe tomorrow?
 
-[[Restart-&gt;Passage1]] </tw-passagedata><tw-passagedata pid="21" name="startup" tags="startup" position="402,600" size="100,100">{
+(click:&quot;Restart&quot;)[(restart:)]Restart</tw-passagedata><tw-passagedata pid="21" name="startup" tags="startup" position="402,600" size="100,100">{
 (set: $trash to 0)
 (set: $random to (random: 1,3))
-(set: $thrown to false)
-}</tw-passagedata><tw-passagedata pid="22" name="PostBridgeLitterPassage" tags="" position="699,697.5" size="100,100">&lt;div class=&quot;img&quot;&gt;
+(set: $glove to false)
+(set: $mask to false)
+(set: $bag to false)
+}</tw-passagedata><tw-passagedata pid="22" name="PostBridgeLitterPassage" tags="" position="668,702.5" size="100,100">&lt;div class=&quot;img&quot;&gt;
+		    &lt;img src=&quot;https://sozafoiasjosef.github.io/twine/images/post-bridgeLitter.gif&quot;&gt;
+	&lt;/div&gt;
+&lt;div class=&quot;center&quot;&gt;
+[[Pick Up Mask-&gt;PostBridgeLitterPassage1]]
+=|=
+
+Left
+=|=
+[[Forward-&gt;Passage3]]
+[[Back-&gt;Passage2]]
+=|=
+
+Right
+|==|
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="PostBridgeLitterPassage1" tags="" position="822.8181762695312,780" size="100,100">&lt;div class=&quot;img&quot;&gt;
 		    &lt;img src=&quot;https://sozafoiasjosef.github.io/twine/images/post-bridgeLitter.jpg&quot;&gt;
 	&lt;/div&gt;
 &lt;div class=&quot;center&quot;&gt;
@@ -330,6 +364,22 @@ Left
 =|=
 [[Forward-&gt;Passage3]]
 [[Back-&gt;Passage2]]
+=|=
+
+Right
+|==|
+&lt;/div&gt;
+(set: $mask to true)</tw-passagedata><tw-passagedata pid="24" name="Passage13.1" tags="" position="1595,357.5" size="100,100">&lt;div class=&quot;img&quot;&gt;
+		    &lt;img src=&quot;https://sozafoiasjosef.github.io/twine/images/pre-bus-stop.gif&quot;&gt;
+	&lt;/div&gt;
+&lt;div class=&quot;center&quot;&gt;
+[[Pick Up Garbage-&gt;Passage13]]
+=|=
+
+Left
+=|=
+[[Forward-&gt;PassageLib]]
+[[Back-&gt;Passage9]]
 =|=
 
 Right
